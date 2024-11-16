@@ -1,0 +1,80 @@
+{{#partial "content"}}
+    <form action="/create/animal/new" method="post" class=" text-center">
+        <h3>Add an Animal</h3>
+        <hr>
+        {{#if endangered}}
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="normal"
+                           onClick="window.location = '/create/animal';">
+                    <label class="form-check-label" for="inlineRadio1">Normal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="endangered"
+                           onClick="window.location = '/create/animal/endangered';" checked>
+                    <label class="form-check-label" for="inlineRadio2">Endangered</label>
+                </div>
+            </div>
+            <div class="form-group pt-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Input Name..." required>
+            </div>
+<!--            //age-->
+            <div class="form-group">
+                <div class="input-group mt-2 mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="age">Age</label>
+                    </div>
+                    <select class="custom-select w-50" id="age" name="age">
+                        <option selected>Choose...</option>
+                        {{#if age }}
+                            {{#each age as |a|}}
+                                <option name="age" value={{a}}>{{a}}</option>
+                            {{/each}}
+                        {{/if}}
+                    </select>
+                </div>
+            </div>
+<!--            // health-->
+            <div class="form-group">
+                <div class="input-group mt-2 mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="health">Health</label>
+                    </div>
+                    <select class="custom-select w-50" id="health" name="health">
+                        <option selected>Choose...</option>
+                        {{#if health }}
+                            {{#each health as |h|}}
+                                <option name="health" value={{h}}>{{h}}</option>
+                            {{/each}}
+
+                        {{/if}}
+                    </select>
+                </div>
+            </div>
+        {{else}}
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="normal"
+                           onClick="window.location = '/create/animal';" checked>
+                    <label class="form-check-label" for="inlineRadio1">Normal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="endangered"
+                           onClick="window.location = '/create/animal/endangered';">
+                    <label class="form-check-label" for="inlineRadio2">Endangered</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Input Name..." required>
+            </div>
+
+        {{/if}}
+        <div class="form-group pt-3 pb-2">
+            <button type="submit" class="btn btn-primary btn-lg"> Create </button>
+        </div>
+    </form>
+{{/partial}}
+
+{{>layout.hbs}}

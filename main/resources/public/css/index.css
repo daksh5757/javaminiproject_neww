@@ -1,0 +1,55 @@
+*{
+borde-box: box-sizing;
+margin:0;
+padding:0;
+}
+body{
+    text-align: center;
+    background-image:url("/images/k1.jpeg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    background-attachment:fixed;
+}
+.demo{
+    background-image:url("/images/ol1.jpeg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    opacity: 0.8;
+    margin-top: 120px;
+}
+.navbar{
+height: 20vh;
+background-color:white;
+color: black;
+}
+.navbar ul a{
+color:black;
+}
+.animalform{
+background-color: black;
+text-align: center;
+color: white;
+}
+.form-group input{
+
+}
+form{
+    background-color:green;
+    text-align: center;
+        width:50%;
+        margin:auto;
+        margin-top:170px;
+        text-align:center;
+}
+
+.views-animals{
+margin-top:100px;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 5px;
+
+}
